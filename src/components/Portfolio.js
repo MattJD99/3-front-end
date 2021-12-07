@@ -4,7 +4,7 @@ function Portfolio({ portfolio, setPortfolio }) {
     // const [portfolio, setPortfolio] = useState([])
 
     // useEffect(() => {
-    //     fetch("https://project-2-cryptoco.herokuapp.com/favorites")
+    //     fetch("http://localhost:9292/portfolios")
     //     .then(response => response.json())
     //     .then(data => setPortfolio(data))
     //   }, [portfolio])
