@@ -5,7 +5,6 @@ function Search({ coins }) {
     const [search, setSearch] = useState('')
 
     function handleChange(event) {
-      // setSearch('')
       setSearch(event.target.value)
     }
 

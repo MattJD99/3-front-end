@@ -5,7 +5,7 @@ function Favorites({ id, coin, image, price }) {
     const [isFav, setIsFav] = useState(true)
 
     useEffect(() => {
-      fetch("https://project-2-cryptoco.herokuapp.com/favorites")
+      fetch("http://localhost:9292/portfolios")
       .then(response => response.json())
       .then(data => setFavorites(data))
     }, [favorites])
@@ -14,18 +14,25 @@ function Favorites({ id, coin, image, price }) {
         setIsFav(!isFav)
 
         if(isFav){
-        fetch("https://project-2-cryptoco.herokuapp.com/favorites", {
+        fetch("http://localhost:9292/portfolios", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-        body: JSON.stringify({ coin: coin, image: image, price: price, id: coin })
+            body: JSON.stringify({
+                // user_id: user_id,
+                coin_id: id,
+                coin: coin,
+                price: price,
+                image: image
+            })
         })
+        .then((r) => r.json())
         setFavorites([...favorites, coin])
 
         }
         else {
-        fetch(`https://project-2-cryptoco.herokuapp.com/favorites/${id}`, {
+        fetch(`http://localhost:9292/portfolios/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
