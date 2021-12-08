@@ -5,40 +5,26 @@ function Favorites({ id, coin, image, price }) {
     const [isFav, setIsFav] = useState(true)
 
     useEffect(() => {
-      fetch("http://localhost:9292/portfolios")
+      fetch("http://localhost:9292/portfolio")
       .then(response => response.json())
       .then(data => setFavorites(data))
-    }, [favorites])
+    }, [])
 
     function handleClick(){
-        setIsFav(!isFav)
-
-        if(isFav){
-        fetch("http://localhost:9292/portfolios", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // user_id: user_id,
-                coin_id: id,
-                coin: coin,
-                price: price,
-                image: image
-            })
-        })
-        .then((r) => r.json())
-        setFavorites([...favorites, coin])
-
-        }
-        else {
-        fetch(`http://localhost:9292/portfolios/${id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        }
+    fetch("http://localhost:9292/portfolio", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        coin_id: id,
+        coin: coin,
+        price: price,
+        image: image
+      }),
+    })
+      .then((r) => r.json())
+      setFavorites([...favorites, coin])
     }
 
     return (

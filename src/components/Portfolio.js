@@ -1,27 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Purchase from "./Purchase";
 
-function Portfolio({ portfolio, setPortfolio }) {
-    // const [portfolio, setPortfolio] = useState([])
+function Portfolio() {
+    const [portfolio, setPortfolio] = useState([])
 
-    // useEffect(() => {
-    //     fetch("http://localhost:9292/portfolios")
-    //     .then(response => response.json())
-    //     .then(data => setPortfolio(data))
-    //   }, [portfolio])
+    useEffect(() => {
+        fetch("http://localhost:9292/portfolio")
+        .then(response => response.json())
+        .then(data => setPortfolio(data))
+      }, [portfolio])
       
     function handleRemove(event) {
-        // const deletePortfolio = portfolio.filter((coin) => coin.name !== coin);
-        // setPortfolio(deletePortfolio);
-        fetch(`http://localhost:9292/portfolios/${event.target.value}`, {
+        fetch(`http://localhost:9292/portfolio/${event.target.value}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             },
-        // body: JSON.stringify({ coin: coin, price: price, image: image, id: coin })
         })
-        // console.log(event.target.value)
       };
-    
+
 return (
     <div className="portfolio">
       <h1 className="coin-text">Portfolio</h1>
@@ -35,7 +32,7 @@ return (
             <div className="coin-data">
                 <p className="coin-price">${coin.price}</p>
                 <button onClick={handleRemove} value={coin.id} className="remove button">Remove from Portfolio!!</button>
-            
+                <Purchase price={coin.price} />
             </div>
          </div>
         </div>

@@ -31,10 +31,10 @@ function Search({ coins }) {
             key={coin.name}
             id={coin.name}
             coin={coin.name}
-            price={coin.current_price}
+            price={coin.price}
             image={coin.image}
             symbol={coin.symbol}
-            priceChange={coin.price_change_percentage_24h.toFixed(2)}
+            priceChange={coin.price_change_percentage_24hr}
             marketCap={coin.market_cap}
            />
          ))}
