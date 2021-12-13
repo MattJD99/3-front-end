@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Coin from "./Coin";
 
-function Search({ coins }) {
+function Search({ coins, fav, setFav, currentUser }) {
     const [search, setSearch] = useState('')
 
     function handleChange(event) {
@@ -25,7 +25,6 @@ function Search({ coins }) {
               <input className="coin-input" type="text" value={search} placeholder="Search for a Currency" onChange={handleChange}/>
               <input type="submit" value="Reset" />
             </form>
-
           {filteredCoins.map((coin) => (
           <Coin
             key={coin.name}
@@ -36,6 +35,9 @@ function Search({ coins }) {
             symbol={coin.symbol}
             priceChange={coin.price_change_percentage_24hr}
             marketCap={coin.market_cap}
+            fav={fav}
+            setFav={setFav}
+            currentUser={currentUser}
            />
          ))}
         </div>

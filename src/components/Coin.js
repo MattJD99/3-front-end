@@ -1,7 +1,7 @@
 import React from 'react';
 import Favorites from './Favorites';
 
-function Coin({ id, coin, name, price, image, priceChange, marketCap, favorites }) {
+function Coin({ id, coin, name, price, image, priceChange, marketCap, fav, setFav, currentUser }) {
 
     return (
         <div key={id} className='coin-container'>
@@ -15,7 +15,14 @@ function Coin({ id, coin, name, price, image, priceChange, marketCap, favorites 
                     <p className="coin-price">${price}</p>
                     <p className={`coin_percent ${priceChange < 0 ? "red" : "green"}`}>{priceChange}%</p>
                     <p className="coin-marketcap">Market Cap: ${marketCap.toLocaleString()}</p>
-                    <Favorites id={id} coin={coin} price={price} image={image} favorites={favorites} />
+                    <Favorites
+                        id={id}
+                        coin={coin}
+                        price={price}
+                        image={image}
+                        fav={fav}
+                        setFav={setFav}
+                        currentUser={currentUser} />
                 </div>
             </div>
         </div>

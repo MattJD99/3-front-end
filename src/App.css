@@ -55,6 +55,7 @@
   width: 240px;
   font-size: smaller;
   text-align: left;
+  margin-right: 30px;
 }
 
 .coin-percent {
@@ -73,7 +74,7 @@
 
 
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -106,11 +107,11 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin-right: 30px;
   padding: 0;
   background-color: black;
   color: white;

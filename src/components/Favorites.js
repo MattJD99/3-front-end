@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-function Favorites({ id, coin, image, price }) {
-    const [favorites, setFavorites] = useState([])
-    const [isFav, setIsFav] = useState(true)
+function Favorites({ id, coin, image, price, fav, setFav, currentUser }) {
 
-    useEffect(() => {
-      fetch("http://localhost:9292/portfolio")
-      .then(response => response.json())
-      .then(data => setFavorites(data))
-    }, [])
-
-    function handleClick(){
+function handleClick(){
     fetch("http://localhost:9292/portfolio", {
       method: "POST",
       headers: {
@@ -20,19 +12,19 @@ function Favorites({ id, coin, image, price }) {
         coin_id: id,
         coin: coin,
         price: price,
-        image: image
+        image: image,
+        user_id: currentUser.id
       }),
     })
       .then((r) => r.json())
-      setFavorites([...favorites, coin])
+      setFav([...fav, id])
     }
-
+                                                         //isFav ? 'Remove from Portfolio' :
     return (
-        <div id="favbutton">
-            <button onClick={handleClick} value={coin}>{!isFav ? 'Remove from Portfolio' : 'Add to Portfolio'}</button>
+        <div id="favbutton">                          
+            <button onClick={handleClick} value={coin}>{'Add to Portfolio'}</button>
         </div>
     )
-
 }
 
 export default Favorites;
