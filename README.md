@@ -2,9 +2,9 @@ This repository contains the client side of my phase 3 project including the nec
 Run the following steps to properly load the client side front end.
 
 # 1. in terminal run "bundle install"
-# 3. in terminal run "npm start"
+# 2. in terminal run "npm start"
 
-# the single page application will start in your local browser #
+The single page application will start in your local browser.
 
 Once loaded you will be logged in as "guest". As a guest you can not save to your portfolio.  
 
