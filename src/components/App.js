@@ -23,10 +23,13 @@ function App() {
   }, [])
 
   useEffect(() => {
-      fetch(`http://localhost:9292/portfolio/${currentUser.id}`)
+      // fetch(`http://localhost:9292/portfolio/${currentUser.id}`)
+      fetch("http://localhost:9292/portfolio")
       .then(response => response.json())
       .then(data => setPortfolio(data))
-    }, [fav, currentUser.id])
+    // }, [fav, currentUser.id])
+    }, [fav])
+
 
     return (   
       <div className="App">
