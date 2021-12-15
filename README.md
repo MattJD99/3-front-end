@@ -1,6 +1,8 @@
 This repository contains the client side of my phase 3 project including the necessary react components and css files.
 Run the following steps to properly load the client side front end.
 
+
+# 0. Clone the code locally to your machine and navigate to the newly cloned folder.
 # 1. in terminal run "bundle install"
 # 2. in terminal run "npm start"
 
