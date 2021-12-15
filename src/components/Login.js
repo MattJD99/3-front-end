@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Login({ changeUser, currentUser }) {
     const [userLogin, setUserLogin] = useState("")
-    const whosLoggedIn = Object.values(currentUser)
+    // const whosLoggedIn = Object.values(currentUser)
     
     async function findCurrentUser(username) {
       const response = await fetch(`http://localhost:9292/users/${username}`)
@@ -28,7 +28,7 @@ function Login({ changeUser, currentUser }) {
                 <input type="text" name="login" value={userLogin} onChange={handleChange} />
                 <input type="submit" value="Login"/>
             </form>
-            <p>Current User: {whosLoggedIn[1]}</p>
+            <p>Current User: {currentUser === "guest" ? "guest": currentUser.username}</p>
         </div>
     )
 }

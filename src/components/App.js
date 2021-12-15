@@ -8,7 +8,7 @@ function App() {
   const [coins, setCoins] = useState([])
   const [portfolio, setPortfolio] = useState([])
   const [fav, setFav] = useState([])
-  const [currentUser, setCurrentUser] = useState("")
+  const [currentUser, setCurrentUser] = useState("guest")
 
   const changeUser = (user) => {
     setCurrentUser(user)
@@ -23,10 +23,10 @@ function App() {
   }, [])
 
   useEffect(() => {
-      fetch("http://localhost:9292/portfolio")
+      fetch(`http://localhost:9292/portfolio/${currentUser.id}`)
       .then(response => response.json())
       .then(data => setPortfolio(data))
-    }, [fav])
+    }, [fav, currentUser.id])
 
     return (   
       <div className="App">

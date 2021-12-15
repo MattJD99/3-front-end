@@ -13,21 +13,21 @@ function Portfolio({ portfolio, fav, setFav, currentUser }) {
         setFav([fav])
       };
 
-// if(currentUser.id === owner)         use ternary for portfolio title
+// if(currentUser.id === owner)
 return (
     <div className="portfolio">
-      <h1 className="coin-text">{currentUser.username}'s Portfolio</h1>
+      <h1 className="coin-text">{currentUser === "guest" ? "guest" : currentUser.username}'s Portfolio</h1>
     {portfolio.map((coin) => (
         <div key={coin.id} className='coin-container'>
         <div className='coin-row'>
             <div id={coin.name} className="coin">
-                <h4>Portfolios userID: {coin.user_id}</h4>
+                <h4>Portfolios userID: {coin.user_id === null ? "guest" : coin.user_id}</h4>
                 <img src={coin.image} alt='crypto' />
                 <p className="coin-symbol">{coin.coin}</p>
             </div>
             <div className="coin-data">
                 <p className="coin-price">${coin.price}</p>
-                <button onClick={handleRemove} value={coin.id} className="remove button">Remove from Portfolio!!</button>
+                <button onClick={handleRemove} value={coin.id} className="remove button">Remove from Portfolio</button>
                 <Purchase price={coin.price} id={coin.id}/>
             </div>
          </div>
