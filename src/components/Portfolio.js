@@ -13,7 +13,6 @@ function Portfolio({ portfolio, fav, setFav, currentUser }) {
         setFav([fav])
       };
 
-// if(currentUser.id === owner)
 return (
     <div className="portfolio">
       <h1 className="coin-text">{currentUser === "guest" ? "guest" : currentUser.username}'s Portfolio</h1>

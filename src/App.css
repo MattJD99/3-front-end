@@ -10,7 +10,7 @@
 .coin-row {
   display: flex;
   flex-direction: row;
-  justify-items: start;
+  justify-items: center;
   align-items: center;
   height: 80px;
   border-bottom: 1px solid white;
@@ -73,9 +73,9 @@
 }
 
 * {
-  box-sizing: border-box;
-  margin-right: 30px;
-  padding: 0;
+  /* box-sizing: border-box; */
+  /* margin-right: 30px; */
+  /* padding: 0; */
   background-color: black;
   color: white;
 }
@@ -107,7 +107,7 @@
   height: 50px;
   border-radius: 4px;
   border: none;
-  background-color: teal;
+  background: linear-gradient(90deg,#5522fa 0,#0074e4 100%);
   color: white;
 }
 
@@ -119,20 +119,36 @@
   margin-right: "10px";
 }
 
-/* .favbutton {
-display: inline-block;
-outline: 0;
-border: none;
-box-shadow: none;
-cursor: pointer;
-padding: 9px 22px;
-font-size: 22px;
-height: 50px;
-font-weight: 400;
-color: #fff;
-text-align: center;
-line-height: normal;
-background: linear-gradient(90deg,#5522fa 0,#0074e4 100%);
-border-radius: 50px;
-transition: color .2s ease,background-color .2s ease,box-shadow .2s ease;
-} */
+button {
+  margin-right: 30px;
+}
+
+label {
+  margin-right: 30px;
+}
+
+input {
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: none;
+  background: linear-gradient(90deg,#5522fa 0,#0074e4 100%);
+  color: white;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: white;
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 12px 12px;
+  border: 0;
+  color: #fff;
+  background: linear-gradient(90deg,rgb(151, 28, 28) 0,rgb(93, 46, 168) 100%);
+  font-size: 12px;
+}

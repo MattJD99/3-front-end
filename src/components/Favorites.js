@@ -19,7 +19,7 @@ function handleClick(){
       .then((r) => r.json())
       setFav([...fav, id])
     }
-                                                         //isFav ? 'Remove from Portfolio' :
+
     return (
         <div className="favbutton">                          
             <button onClick={handleClick} value={coin}>{'Add to Portfolio'}</button>

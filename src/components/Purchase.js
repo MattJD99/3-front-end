@@ -17,10 +17,6 @@ function Purchase({ price, id }) {
             })
               .then((r) => r.json())
         setPurchase(purchase)
-        //subtract purchase from price
-        //save result as variable
-        //put variable in portfolio use css to make green or red
-        // setPurchase('')
         }
   
     function handleChange(event) {
