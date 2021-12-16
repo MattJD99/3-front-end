@@ -12,6 +12,7 @@ function handleClick(){
         coin: coin,
         price: price,
         image: image,
+        coin_id: id
       }),
     })
       .then((r) => r.json())

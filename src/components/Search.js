@@ -28,7 +28,7 @@ function Search({ coins, fav, setFav, currentUser }) {
           {filteredCoins.map((coin) => (
           <Coin
             key={coin.name}
-            id={coin.name}
+            id={coin.id}
             coin={coin.name}
             price={coin.price}
             image={coin.image}
