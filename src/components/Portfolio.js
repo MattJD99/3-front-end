@@ -20,7 +20,6 @@ return (
         <div key={coin.id} className='coin-container'>
         <div className='coin-row'>
             <div id={coin.name} className="coin">
-                {/* <h4>Portfolios userID: {coin.user_id === null ? "guest" : coin.user_id}</h4> */}
                 <img src={coin.image} alt='crypto' />
                 <p className="coin-symbol">{coin.coin}</p>
             </div>

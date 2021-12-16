@@ -7,7 +7,6 @@ function Purchase({ price, id }) {
     function handleSubmit(event) {
         event.preventDefault()
         fetch(`http://localhost:9292/portfolio/${id}`, {
-        // fetch("http://localhost:9292/portfolio", {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

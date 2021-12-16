@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 function Login({ changeUser, currentUser }) {
     const [userLogin, setUserLogin] = useState("")
-    // const whosLoggedIn = Object.values(currentUser)
     
     async function findCurrentUser(username) {
       const response = await fetch(`http://localhost:9292/users/${username}`)
