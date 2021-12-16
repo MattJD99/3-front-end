@@ -10,7 +10,7 @@ function handleClick(){
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        coin_id: id,
+        // coin_id: id,
         coin: coin,
         price: price,
         image: image,
